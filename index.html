@@ -3,72 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO META TAGS -->
-  <title>Hood Productions — Visual Storytelling Studio</title>
-  <meta name="description" content="Hood Productions is a premium media studio specializing in video production and photography. We craft cinematic visuals that move people." />
-  <meta name="keywords" content="Hood Productions, video production, photography, media studio, cinematography, creative studio" />
-  <meta name="author" content="Hood Productions" />
-
-  <!-- Open Graph (WhatsApp, LinkedIn, Twitter previews) -->
-  <meta property="og:title" content="Hood Productions — Visual Storytelling Studio" />
-  <meta property="og:description" content="Premium video production and photography studio. We craft visuals that move people." />
-  <meta property="og:image" content="images/og-image.jpg" /> <!-- EDIT: replace with your OG image -->
-  <meta property="og:url" content="https://hoodproductions.com" /> <!-- EDIT: replace with your domain -->
+  <title>Hood Studios Production | Lagos Photography Studio</title>
+  <meta
+    name="description"
+    content="Hood Studios Production is a Lagos-based photography studio offering portrait, maternity, fashion, and creative studio sessions with flexible investment packages."
+  />
+  <meta
+    name="keywords"
+    content="Hood Studios Production, Lagos photography studio, portrait photography, maternity photoshoot, fashion photography, Sangotedo studio"
+  />
+  <meta name="author" content="Hood Studios Production" />
+  <meta property="og:title" content="Hood Studios Production" />
+  <meta
+    property="og:description"
+    content="Studio portraits, maternity, fashion, and creative photography in Lagos."
+  />
+  <meta property="og:image" content="assets/images/gallery-2.jpeg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="assets/images/logo.png" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png" /> <!-- EDIT: add your favicon here -->
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ============ NAVBAR ============ -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#home" class="nav-logo">
-        <!-- EDIT: Replace below img tag with your logo file. Example: <img src="images/logo.png" alt="Hood Productions" /> -->
-        <span class="logo-placeholder">HOOD<span class="accent">.</span></span>
+      <a href="#home" class="nav-logo" aria-label="Hood Studios Production home">
+        <img src="assets/images/logo.png" alt="Hood Studios Production logo" />
       </a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Now</button>
+      <button class="nav-cta" data-whatsapp-message="Hello, I want to book a studio session with Hood Studios Production.">Book Now</button>
       <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
   <section class="hero" id="home">
-    <!-- EDIT: Replace this video src with your showreel. Recommended: upload to /videos/showreel.mp4 -->
-    <video class="hero-video" autoplay muted loop playsinline>
-<source src="https://assets.mixkit.co/videos/preview/mixkit-set-of-plateaus-seen-from-the-air-4overwhat-aerial-view-of-a-city-28714-large.mp4" type="video/mp4" />   
- </video>
+    <div class="hero-media">
+      <img class="hero-image" src="assets/images/gallery-2.jpeg" alt="Studio portrait by Hood Studios Production" />
+    </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-tag">Lagos · Nigeria</p>
-      <h1 class="hero-title">We Make<br /><span class="accent-text">Visuals</span><br />That Move.</h1>
-      <p class="hero-sub">Video Production & Photography Studio</p>
+      <p class="hero-tag">Sangotedo, Ajah, Lagos</p>
+      <h1 class="hero-title">Studio Portraits<br /><span class="accent-text">That Feel</span><br />Like You.</h1>
+      <p class="hero-sub">Trusted photography for portraits, maternity, fashion, and creative sessions.</p>
       <div class="hero-cta">
-        <a href="#gallery" class="btn-primary">View Our Work</a>
-        <a href="#contact" class="btn-ghost">Start a Project</a>
+        <a href="#gallery" class="btn-primary">See The Work</a>
+        <button class="btn-ghost" data-whatsapp-message="Hello, I would like to ask about your studio packages and availability.">Check Availability</button>
+      </div>
+      <div class="hero-meta">
+        <span><i class="fas fa-camera"></i> Edited studio images</span>
+        <span><i class="fas fa-location-dot"></i> Lagos, Nigeria</span>
+        <span><i class="fab fa-instagram"></i> @hoodstudiosandproduction1</span>
       </div>
     </div>
     <div class="hero-scroll">
@@ -77,215 +74,231 @@
     </div>
   </section>
 
-  <!-- ============ ABOUT ============ -->
   <section class="about" id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-left">
           <p class="section-tag">Who We Are</p>
-          <h2 class="section-title">Built in the Hood.<br />Seen by the World.</h2>
+          <h2 class="section-title">A Lagos studio built for clean, confident images.</h2>
         </div>
         <div class="about-right">
-          <p>Hood Productions is a Lagos-based creative media studio specializing in cinematic video production and high-impact photography. We don't just capture moments — we architect visual stories that leave marks.</p>
-          <p>From brand films to product shoots, every frame is intentional, every second is crafted.</p>
+          <p>Hood Studios Production creates polished portrait experiences for clients who want images that look sharp, intentional, and memorable. From personal portraits to maternity and creative fashion sessions, we make the process calm and seamless from booking to delivery.</p>
+          <p>Whether you are camera shy or fully in your element, we guide each session so the final images feel natural, premium, and worth sharing.</p>
           <div class="about-stats">
-            <div class="stat"><span class="stat-num">120+</span><span class="stat-label">Projects Delivered</span></div>
-            <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years in Business</span></div>
-            <div class="stat"><span class="stat-num">40+</span><span class="stat-label">Happy Clients</span></div>
+            <div class="stat"><span class="stat-num">4</span><span class="stat-label">Studio Packages</span></div>
+            <div class="stat"><span class="stat-num">2-5</span><span class="stat-label">Delivery Days</span></div>
+            <div class="stat"><span class="stat-num">50%</span><span class="stat-label">Booking Deposit</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ SERVICES ============ -->
   <section class="services" id="services">
     <div class="container">
       <p class="section-tag centered">What We Do</p>
-      <h2 class="section-title centered">Our Services</h2>
+      <h2 class="section-title centered">Studio Sessions Designed Around Your Shoot</h2>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-video"></i></div>
-          <h3>Video Production</h3>
-          <p>Brand films, commercials, documentaries, music videos, and corporate content — shot and edited to cinema standard.</p>
+          <div class="service-icon"><i class="fas fa-camera-retro"></i></div>
+          <h3>Portrait Sessions</h3>
+          <p>Clean and confident portraits for personal branding, birthdays, graduates, and timeless studio images.</p>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-camera"></i></div>
-          <h3>Photography</h3>
-          <p>Product, portrait, editorial, and event photography. Every shot is composed with intention and edited with precision.</p>
+          <div class="service-icon"><i class="fas fa-heart"></i></div>
+          <h3>Maternity Shoots</h3>
+          <p>Elegant maternity portraits with guided posing, refined editing, and a calm studio atmosphere.</p>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-film"></i></div>
-          <h3>Post Production</h3>
-          <p>Color grading, sound design, motion graphics, and delivery-ready editing for all platforms and formats.</p>
+          <div class="service-icon"><i class="fas fa-shirt"></i></div>
+          <h3>Fashion & Creative</h3>
+          <p>Styled visual sessions for artists, designers, and clients who want stronger editorial energy.</p>
         </div>
         <div class="service-card">
-          <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
-          <h3>Content Strategy</h3>
-          <p>We help brands develop visual content strategies that convert — from concept to camera to publishing.</p>
+          <div class="service-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+          <h3>Professional Retouching</h3>
+          <p>Every package includes edited selections shaped to match the mood, look, and finish of your session.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ GALLERY ============ -->
   <section class="gallery-section" id="gallery">
     <div class="container">
       <p class="section-tag centered">Our Work</p>
-      <h2 class="section-title centered">Gallery</h2>
+      <h2 class="section-title centered">Studio Gallery</h2>
       <div class="gallery-filters">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="video">Video</button>
-        <button class="filter-btn" data-filter="photo">Photography</button>
+        <button class="filter-btn" data-filter="portrait">Portraits</button>
+        <button class="filter-btn" data-filter="fashion">Fashion</button>
+        <button class="filter-btn" data-filter="maternity">Maternity</button>
       </div>
       <div class="gallery-grid" id="galleryGrid">
-        <!-- EDIT: Replace these placeholder images with your own work -->
-        <!-- Each item: add data-category="video" or data-category="photo" -->
-        <div class="gallery-item" data-category="video">
-          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80" alt="Video Production" loading="lazy" />
-          <div class="gallery-overlay"><span>Brand Film</span></div>
+        <div class="gallery-item tall" data-category="fashion">
+          <img src="assets/images/gallery-1.jpeg" alt="Creative fashion portrait" loading="lazy" />
+          <div class="gallery-overlay"><span>Creative Fashion</span></div>
         </div>
-        <div class="gallery-item tall" data-category="photo">
-          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80" alt="Portrait Photography" loading="lazy" />
-          <div class="gallery-overlay"><span>Portrait</span></div>
+        <div class="gallery-item tall" data-category="maternity">
+          <img src="assets/images/gallery-2.jpeg" alt="Maternity studio portrait" loading="lazy" />
+          <div class="gallery-overlay"><span>Maternity Portrait</span></div>
         </div>
-        <div class="gallery-item" data-category="video">
-          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&q=80" alt="Commercial Video" loading="lazy" />
-          <div class="gallery-overlay"><span>Commercial</span></div>
+        <div class="gallery-item" data-category="portrait">
+          <img src="assets/images/gallery-3.jpeg" alt="Black and white portrait" loading="lazy" />
+          <div class="gallery-overlay"><span>Studio Portrait</span></div>
         </div>
-        <div class="gallery-item wide" data-category="photo">
-          <img src="https://images.unsplash.com/photo-1520390138845-fd2d229dd553?w=800&q=80" alt="Editorial Photography" loading="lazy" />
-          <div class="gallery-overlay"><span>Editorial</span></div>
+        <div class="gallery-item wide" data-category="fashion">
+          <img src="assets/images/gallery-4.jpeg" alt="Fashion hoodie campaign shoot" loading="lazy" />
+          <div class="gallery-overlay"><span>Campaign Styling</span></div>
         </div>
-        <div class="gallery-item" data-category="photo">
-          <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?w=600&q=80" alt="Product Photography" loading="lazy" />
-          <div class="gallery-overlay"><span>Product</span></div>
+        <div class="gallery-item" data-category="fashion">
+          <img src="assets/images/gallery-5.jpeg" alt="Fashion portrait close-up" loading="lazy" />
+          <div class="gallery-overlay"><span>Close-Up Detail</span></div>
         </div>
-        <div class="gallery-item" data-category="video">
-          <img src="https://images.unsplash.com/photo-1585743846364-4a39df73a7e7?w=600&q=80" alt="Documentary" loading="lazy" />
-          <div class="gallery-overlay"><span>Documentary</span></div>
+        <div class="gallery-item" data-category="portrait">
+          <img src="assets/images/gallery-6.jpeg" alt="Art-inspired portrait session" loading="lazy" />
+          <div class="gallery-overlay"><span>Editorial Portrait</span></div>
         </div>
-        <div class="gallery-item tall" data-category="photo">
-          <img src="https://images.unsplash.com/photo-1616091216791-a5360b5aca7d?w=600&q=80" alt="Event Photography" loading="lazy" />
-          <div class="gallery-overlay"><span>Event</span></div>
-        </div>
-        <div class="gallery-item" data-category="video">
-          <img src="https://images.unsplash.com/photo-1601506521793-dc748fc80b67?w=600&q=80" alt="Music Video" loading="lazy" />
-          <div class="gallery-overlay"><span>Music Video</span></div>
+        <div class="gallery-item" data-category="maternity">
+          <img src="assets/images/gallery-7.jpeg" alt="Maternity portrait variation" loading="lazy" />
+          <div class="gallery-overlay"><span>Studio Maternity</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CLIENT LOGOS ============ -->
   <section class="clients">
     <div class="container">
       <p class="section-tag centered">Trusted By</p>
       <div class="clients-ticker">
         <div class="ticker-track">
-          <!-- EDIT: Replace these with actual client logos -->
-          <div class="client-logo">CLIENT ONE</div>
-          <div class="client-logo">BRAND TWO</div>
-          <div class="client-logo">STUDIO THREE</div>
-          <div class="client-logo">AGENCY FOUR</div>
-          <div class="client-logo">BRAND FIVE</div>
-          <div class="client-logo">CLIENT SIX</div>
-          <!-- Duplicated for infinite scroll effect -->
-          <div class="client-logo">CLIENT ONE</div>
-          <div class="client-logo">BRAND TWO</div>
-          <div class="client-logo">STUDIO THREE</div>
-          <div class="client-logo">AGENCY FOUR</div>
-          <div class="client-logo">BRAND FIVE</div>
-          <div class="client-logo">CLIENT SIX</div>
+          <div class="client-logo">TheBrandNerve</div>
+          <div class="client-logo">Habibah Heritage Foundation</div>
+          <div class="client-logo">Portrait Clients</div>
+          <div class="client-logo">Maternity Sessions</div>
+          <div class="client-logo">Creative Campaigns</div>
+          <div class="client-logo">Lagos Studio Clients</div>
+          <div class="client-logo">TheBrandNerve</div>
+          <div class="client-logo">Habibah Heritage Foundation</div>
+          <div class="client-logo">Portrait Clients</div>
+          <div class="client-logo">Maternity Sessions</div>
+          <div class="client-logo">Creative Campaigns</div>
+          <div class="client-logo">Lagos Studio Clients</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ PRICING ============ -->
   <section class="pricing" id="pricing">
     <div class="container">
-      <p class="section-tag centered">Investment</p>
-      <h2 class="section-title centered">Our Packages</h2>
-      <p class="pricing-note centered">Custom quotes available for larger productions. All prices in USD.</p>
+      <p class="section-tag centered">Investment Packages</p>
+      <h2 class="section-title centered">Choose the Session That Fits Your Shoot</h2>
+      <p class="pricing-note centered">Gold, Silver, and custom options are available on request. Standard packages are listed below in naira.</p>
       <div class="pricing-grid">
         <div class="price-card">
-          <p class="price-tier">Starter</p>
-          <div class="price-amount">$<span>500</span></div> <!-- EDIT: Update price -->
-          <p class="price-desc">Perfect for small businesses and personal brands getting started with visual content.</p>
+          <p class="price-tier">Standard Package</p>
+          <div class="price-amount">₦<span>70k</span></div>
+          <p class="price-desc">A focused session for clients who want one look done beautifully.</p>
           <ul class="price-features">
-            <li><i class="fas fa-check"></i> Half-day shoot (4hrs)</li>
-            <li><i class="fas fa-check"></i> 1 location</li>
-            <li><i class="fas fa-check"></i> Basic editing</li>
-            <li><i class="fas fa-check"></i> 10 edited photos OR 1 short video</li>
+            <li><i class="fas fa-check"></i> 1 outfit</li>
+            <li><i class="fas fa-check"></i> 4 edited images</li>
+            <li><i class="fas fa-check"></i> Guided studio posing</li>
           </ul>
-          <a href="#contact" class="btn-ghost">Get Started</a>
+          <button class="btn-ghost package-btn" data-whatsapp-message="Hello, I want to book the Standard Package at Hood Studios Production.">Book Standard</button>
         </div>
         <div class="price-card featured">
           <p class="price-badge">Most Popular</p>
-          <p class="price-tier">Pro</p>
-          <div class="price-amount">$<span>1,500</span></div> <!-- EDIT: Update price -->
-          <p class="price-desc">Ideal for brands, campaigns, and content creators who need professional-grade output.</p>
+          <p class="price-tier">Deluxe Package</p>
+          <div class="price-amount">₦<span>120k</span></div>
+          <p class="price-desc">A stronger package for clients who want more range and more final selects.</p>
           <ul class="price-features">
-            <li><i class="fas fa-check"></i> Full-day shoot (8hrs)</li>
-            <li><i class="fas fa-check"></i> Up to 3 locations</li>
-            <li><i class="fas fa-check"></i> Full post-production</li>
-            <li><i class="fas fa-check"></i> 30 edited photos + 2 videos</li>
-            <li><i class="fas fa-check"></i> Color grading included</li>
+            <li><i class="fas fa-check"></i> 2 outfits</li>
+            <li><i class="fas fa-check"></i> 8 edited images</li>
+            <li><i class="fas fa-check"></i> Creative direction support</li>
           </ul>
-          <a href="#contact" class="btn-primary">Get Started</a>
+          <button class="btn-primary package-btn" data-whatsapp-message="Hello, I want to book the Deluxe Package at Hood Studios Production.">Book Deluxe</button>
         </div>
         <div class="price-card">
-          <p class="price-tier">Enterprise</p>
-          <div class="price-amount">Custom</div>
-          <p class="price-desc">For large productions, campaign shoots, corporate content, and ongoing retainer work.</p>
+          <p class="price-tier">Pro Package</p>
+          <div class="price-amount">₦<span>200k</span></div>
+          <p class="price-desc">Ideal when you want a more complete session with multiple looks and stronger variety.</p>
           <ul class="price-features">
-            <li><i class="fas fa-check"></i> Multi-day shoots</li>
-            <li><i class="fas fa-check"></i> Unlimited locations</li>
-            <li><i class="fas fa-check"></i> Dedicated crew</li>
-            <li><i class="fas fa-check"></i> Full strategy & delivery</li>
-            <li><i class="fas fa-check"></i> Priority turnaround</li>
+            <li><i class="fas fa-check"></i> 3 outfits</li>
+            <li><i class="fas fa-check"></i> 12 edited images</li>
+            <li><i class="fas fa-check"></i> More pose and set variation</li>
           </ul>
-          <a href="#contact" class="btn-ghost">Let's Talk</a>
+          <button class="btn-ghost package-btn" data-whatsapp-message="Hello, I want to book the Pro Package at Hood Studios Production.">Book Pro</button>
+        </div>
+        <div class="price-card">
+          <p class="price-tier">Exquisite Package</p>
+          <div class="price-amount">₦<span>300k</span></div>
+          <p class="price-desc">For clients who want the fullest studio experience with multiple looks and premium output.</p>
+          <ul class="price-features">
+            <li><i class="fas fa-check"></i> 4 outfits</li>
+            <li><i class="fas fa-check"></i> 16 edited images</li>
+            <li><i class="fas fa-check"></i> Extended session coverage</li>
+          </ul>
+          <button class="btn-ghost package-btn" data-whatsapp-message="Hello, I want to book the Exquisite Package at Hood Studios Production.">Book Exquisite</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ TESTIMONIALS ============ -->
+  <section class="policies" id="details">
+    <div class="container">
+      <p class="section-tag centered">Booking & Delivery</p>
+      <h2 class="section-title centered">Everything You Need To Know Before You Book</h2>
+      <div class="policy-grid">
+        <article class="policy-card">
+          <div class="policy-icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Booking / Payment Plan</h3>
+          <p>To secure your date and time, a 50% deposit is required. The remaining 50% balance is paid on the shoot date.</p>
+        </article>
+        <article class="policy-card">
+          <div class="policy-icon"><i class="fas fa-box-open"></i></div>
+          <h3>Delivery</h3>
+          <p>Photo delivery takes between 2 to 5 days depending on your chosen package and the volume of edited images.</p>
+        </article>
+        <article class="policy-card">
+          <div class="policy-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Express Requests</h3>
+          <p>Delivery requests earlier than the stated timeline attract an express fee.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section class="testimonials">
     <div class="container">
-      <p class="section-tag centered">Kind Words</p>
-      <h2 class="section-title centered">What Clients Say</h2>
+      <p class="section-tag centered">What Clients Will Say</p>
+      <h2 class="section-title centered">A Seamless Experience In Front Of The Camera</h2>
       <div class="testimonials-grid">
-        <!-- EDIT: Replace with real testimonials -->
         <div class="testimonial-card">
-          <p class="testimonial-text">"Hood Productions transformed how our brand looks online. The video they delivered exceeded every expectation. Pure cinematic quality."</p>
+          <p class="testimonial-text">“We had an amazing time as they made the whole process seamless even though I am camera shy!”</p>
           <div class="testimonial-author">
-            <div class="author-avatar">JA</div>
+            <div class="author-avatar">AO</div>
             <div>
-              <p class="author-name">James Adeyemi</p>
-              <p class="author-title">CEO, BrandCo Lagos</p>
+              <p class="author-name">Amara Ojo</p>
+              <p class="author-title">Portrait Client</p>
             </div>
           </div>
         </div>
         <div class="testimonial-card">
-          <p class="testimonial-text">"The photography session was flawless. They understood our vision instantly and delivered images that stopped people scrolling."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SN</div>
-            <div>
-              <p class="author-name">Sarah Nwosu</p>
-              <p class="author-title">Creative Director, Stylehaus</p>
-            </div>
-          </div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">"Professional, fast, and incredibly talented. Our product campaign video went viral on Instagram. Highly recommend Hood Productions."</p>
+          <p class="testimonial-text">“Excellent service and experience, I can’t wait to see the pictures.”</p>
           <div class="testimonial-author">
             <div class="author-avatar">TK</div>
             <div>
-              <p class="author-name">Tunde Kareem</p>
-              <p class="author-title">Founder, TK Brands</p>
+              <p class="author-name">Tolu Kings</p>
+              <p class="author-title">Studio Client</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">“From booking to delivery, everything felt organized, easy, and premium. The final images were worth every bit.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ZM</div>
+            <div>
+              <p class="author-name">Zainab Musa</p>
+              <p class="author-title">Maternity Client</p>
             </div>
           </div>
         </div>
@@ -293,245 +306,167 @@
     </div>
   </section>
 
-  <!-- ============ BLOG ============ -->
-  <section class="blog" id="blog">
-    <div class="container">
-      <p class="section-tag centered">Insights</p>
-      <h2 class="section-title centered">From the Studio</h2>
-      <div class="blog-grid">
-        <!-- EDIT: Replace with real blog posts. Link to /blog/post-name.html or a CMS -->
-        <article class="blog-card">
-          <div class="blog-img">
-            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=500&q=80" alt="Blog post" loading="lazy" />
-          </div>
-          <div class="blog-content">
-            <p class="blog-tag">Video Production</p>
-            <h3>5 Things Every Brand Video Must Have in 2026</h3>
-            <p>Most brand videos fail in the first 3 seconds. Here's how to make sure yours doesn't.</p>
-            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="blog-card">
-          <div class="blog-img">
-            <img src="https://images.unsplash.com/photo-1554080353-a576cf803bda?w=500&q=80" alt="Blog post" loading="lazy" />
-          </div>
-          <div class="blog-content">
-            <p class="blog-tag">Photography</p>
-            <h3>Why Lighting is the Most Underrated Tool in Product Photography</h3>
-            <p>The difference between a ₦50,000 photo and a ₦500,000 one is almost always light.</p>
-            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-        <article class="blog-card">
-          <div class="blog-img">
-            <img src="https://images.unsplash.com/photo-1585743846364-4a39df73a7e7?w=500&q=80" alt="Blog post" loading="lazy" />
-          </div>
-          <div class="blog-content">
-            <p class="blog-tag">Content Strategy</p>
-            <h3>How to Build a 3-Month Visual Content Calendar from Scratch</h3>
-            <p>Stop winging your content. Here's the system Hood Productions uses for clients.</p>
-            <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ LOCATION & MAP ============ -->
   <section class="location" id="location">
     <div class="container">
-      <p class="section-tag centered">Find Us</p>
-      <h2 class="section-title centered">Studio Location</h2>
+      <p class="section-tag centered">Studio Location</p>
+      <h2 class="section-title centered">Visit Hood Studios Production In Ajah</h2>
       <div class="location-grid">
         <div class="location-info">
           <div class="location-detail">
             <i class="fas fa-map-marker-alt"></i>
             <div>
               <h4>Address</h4>
-              <!-- EDIT: Replace with real studio address -->
-              <p>123 Studio Street, Lekki Phase 1<br />Lagos, Nigeria</p>
-            </div>
-          </div>
-          <div class="location-detail">
-            <i class="fas fa-clock"></i>
-            <div>
-              <h4>Studio Hours</h4>
-              <!-- EDIT: Update your working hours -->
-              <p>Monday – Friday: 8am – 8pm<br />Saturday: 9am – 6pm<br />Sunday: By appointment only</p>
+              <p>No 1 Maple Street, Happyland Estate, Sangotedo, Ajah, Lagos State, Nigeria</p>
             </div>
           </div>
           <div class="location-detail">
             <i class="fas fa-phone"></i>
             <div>
               <h4>Phone / WhatsApp</h4>
-              <!-- EDIT: Replace with your real number -->
-              <p>+234 800 000 0000</p>
+              <p><a href="tel:+2348102396172">08102396172</a></p>
+            </div>
+          </div>
+          <div class="location-detail">
+            <i class="fab fa-instagram"></i>
+            <div>
+              <h4>Instagram</h4>
+              <p><a href="https://instagram.com/hoodstudiosandproduction1" target="_blank" rel="noreferrer">@hoodstudiosandproduction1</a></p>
             </div>
           </div>
           <div class="location-detail">
             <i class="fas fa-envelope"></i>
             <div>
               <h4>Email</h4>
-              <!-- EDIT: Replace with your real email -->
-              <p>hello@hoodproductions.com</p>
+              <p><a href="mailto:hoodstudiosandproduction@gmail.com">hoodstudiosandproduction@gmail.com</a></p>
             </div>
           </div>
-          <a href="https://maps.google.com/?q=Lekki+Phase+1+Lagos+Nigeria" target="_blank" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">
-            <!-- EDIT: Update the Google Maps link with your exact coordinates or address -->
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=No+1+Maple+street+Happyland+Estate+Sangotedo+Ajah+Lagos+State+Nigeria"
+            target="_blank"
+            rel="noreferrer"
+            class="btn-primary location-btn"
+          >
             <i class="fas fa-directions"></i> Get Directions
           </a>
         </div>
-        <div class="map-container">
-          <!-- EDIT: Replace src with your actual Google Maps embed. 
-               Go to maps.google.com → search your studio → Share → Embed a map → Copy iframe src -->
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7!2d3.4737!3d6.4281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103bf53aec4dd92f%3A0x8a0b8e6df7e26be5!2sLekki%20Phase%201%2C%20Lagos!5e0!3m2!1sen!2sng!4v1234567890"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Hood Productions Studio Location">
-          </iframe>
+        <div class="location-visual">
+          <img src="assets/images/gallery-4.jpeg" alt="Hood Studios creative session" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ CONTACT FORM ============ -->
   <section class="contact" id="contact">
     <div class="container">
       <p class="section-tag centered">Get In Touch</p>
-      <h2 class="section-title centered">Start a Project</h2>
+      <h2 class="section-title centered">Book Your Session</h2>
       <div class="contact-grid">
         <form class="contact-form" id="contactForm">
           <div class="form-row">
             <div class="form-group">
               <label for="name">Full Name *</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required />
+              <input type="text" id="name" name="name" placeholder="Your name" required />
             </div>
             <div class="form-group">
-              <label for="email">Email Address *</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              <label for="phone">Phone / WhatsApp *</label>
+              <input type="tel" id="phone" name="phone" placeholder="08102396172" required />
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="phone">Phone / WhatsApp</label>
-              <input type="tel" id="phone" name="phone" placeholder="+234 800 000 0000" />
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" />
             </div>
             <div class="form-group">
-              <label for="service">Service Needed *</label>
+              <label for="service">Package / Session Type *</label>
               <select id="service" name="service" required>
-                <option value="">Select a service</option>
-                <option value="video">Video Production</option>
-                <option value="photo">Photography</option>
-                <option value="post">Post Production</option>
-                <option value="strategy">Content Strategy</option>
-                <option value="other">Other</option>
+                <option value="">Select an option</option>
+                <option value="Standard Package">Standard Package</option>
+                <option value="Deluxe Package">Deluxe Package</option>
+                <option value="Pro Package">Pro Package</option>
+                <option value="Exquisite Package">Exquisite Package</option>
+                <option value="Gold / Silver / Custom">Gold / Silver / Custom</option>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label for="budget">Budget Range</label>
-            <select id="budget" name="budget">
-              <option value="">Select budget</option>
-              <option value="starter">Under $500</option>
-              <option value="mid">$500 – $1,500</option>
-              <option value="pro">$1,500 – $5,000</option>
-              <option value="enterprise">$5,000+</option>
-            </select>
+            <label for="message">Tell Us About Your Shoot *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Preferred date, session idea, outfits, or any special notes..." required></textarea>
           </div>
-          <div class="form-group">
-            <label for="message">Tell Us About Your Project *</label>
-            <textarea id="message" name="message" rows="5" placeholder="Describe your project, timeline, and any specific requirements..." required></textarea>
-          </div>
-          <!-- EDIT: To make this form functional, connect to Netlify Forms by adding 
-               netlify attribute: <form name="contact" method="POST" data-netlify="true">
-               Also add: <input type="hidden" name="form-name" value="contact" />
-               Netlify will handle submissions and email you automatically. -->
           <button type="submit" class="btn-primary form-submit">
-            <span>Send Message</span>
-            <i class="fas fa-paper-plane"></i>
+            <span>Send Booking Request</span>
+            <i class="fab fa-whatsapp"></i>
           </button>
-          <p class="form-note">We respond within 24 hours. 🔴</p>
+          <p class="form-note">Your request opens directly in WhatsApp so the studio can reply quickly.</p>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <!-- EDIT: Replace text logo with image logo once ready -->
-          <span class="logo-placeholder">HOOD<span class="accent">.</span></span>
-          <p>We make visuals that move.<br />Lagos, Nigeria.</p>
+          <img class="footer-logo" src="assets/images/logo.png" alt="Hood Studios Production logo" />
+          <p>Portrait, maternity, fashion, and creative studio sessions in Lagos.</p>
           <div class="social-links">
-            <!-- EDIT: Replace # with your actual social media profile URLs -->
-            <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
-            <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/hoodstudiosandproduction1" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/2348102396172" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:hoodstudiosandproduction@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
         <div class="footer-links">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-links">
-          <h4>Services</h4>
+          <h4>Packages</h4>
           <ul>
-            <li><a href="#services">Video Production</a></li>
-            <li><a href="#services">Photography</a></li>
-            <li><a href="#services">Post Production</a></li>
-            <li><a href="#services">Content Strategy</a></li>
+            <li><a href="#pricing">Standard</a></li>
+            <li><a href="#pricing">Deluxe</a></li>
+            <li><a href="#pricing">Pro</a></li>
+            <li><a href="#pricing">Exquisite</a></li>
           </ul>
         </div>
         <div class="footer-contact">
           <h4>Contact</h4>
-          <!-- EDIT: Replace with real contact info -->
-          <p><i class="fas fa-envelope"></i> hello@hoodproductions.com</p>
-          <p><i class="fab fa-whatsapp"></i> +234 800 000 0000</p>
-          <p><i class="fas fa-map-marker-alt"></i> Lekki Phase 1, Lagos</p>
+          <p><i class="fas fa-envelope"></i> hoodstudiosandproduction@gmail.com</p>
+          <p><i class="fab fa-whatsapp"></i> 08102396172</p>
+          <p><i class="fas fa-map-marker-alt"></i> Sangotedo, Ajah, Lagos</p>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 Hood Productions. All rights reserved.</p>
-        <p>Built with 🔴 in Lagos</p>
+        <p>© 2026 Hood Studios Production. All rights reserved.</p>
+        <p>Shot and styled in Lagos.</p>
       </div>
     </div>
   </footer>
 
-  <!-- ============ WHATSAPP CHATBOT ============ -->
   <div class="chatbot-wrapper">
     <div class="chatbot-bubble" id="chatBubble">
       <div class="chat-header">
         <div class="chat-avatar"><i class="fab fa-whatsapp"></i></div>
         <div>
-          <p class="chat-name">Hood Productions</p>
-          <p class="chat-status">Typically replies within minutes</p>
+          <p class="chat-name">Hood Studios Production</p>
+          <p class="chat-status">Usually replies on WhatsApp</p>
         </div>
-        <button class="chat-close" id="chatClose">×</button>
+        <button class="chat-close" id="chatClose" aria-label="Close chat">×</button>
       </div>
       <div class="chat-body">
         <div class="chat-message">
-          <p>👋 Hey there! Welcome to <strong>Hood Productions</strong>.</p>
-          <p>What can we help you with today?</p>
+          <p>Welcome to Hood Studios Production.</p>
+          <p>Choose an option below to start your booking.</p>
         </div>
         <div class="chat-options">
-          <button class="chat-option" onclick="openWhatsApp('I want to book a video production shoot')">📹 Book a Video Shoot</button>
-          <button class="chat-option" onclick="openWhatsApp('I want to book a photography session')">📸 Photography Session</button>
-          <button class="chat-option" onclick="openWhatsApp('I want to discuss pricing and packages')">💰 Pricing & Packages</button>
-          <button class="chat-option" onclick="openWhatsApp('I have a general inquiry about Hood Productions')">💬 General Inquiry</button>
+          <button class="chat-option" data-whatsapp-message="Hello, I want to book the Standard Package.">Book Standard Package</button>
+          <button class="chat-option" data-whatsapp-message="Hello, I want to book a maternity session.">Book a Maternity Session</button>
+          <button class="chat-option" data-whatsapp-message="Hello, I want to ask about your availability and packages.">Check Availability</button>
+          <button class="chat-option" data-whatsapp-message="Hello, I have a question about Hood Studios Production.">General Inquiry</button>
         </div>
       </div>
     </div>
@@ -541,6 +476,6 @@
     </button>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

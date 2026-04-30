@@ -1,78 +1,107 @@
-/* ============================================================
-   HOOD PRODUCTIONS — main.js
-   ============================================================ */
+const WHATSAPP_NUMBER = '2348102396172';
 
-/* ── Navbar scroll effect ─────────────────────────────────── */
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 40);
-});
-
-/* ── Mobile hamburger menu ────────────────────────────────── */
 const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('navLinks');
+const navLinks = document.getElementById('navLinks');
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+const chatTrigger = document.getElementById('chatTrigger');
+const chatBubble = document.getElementById('chatBubble');
+const chatClose = document.getElementById('chatClose');
+const chatNotify = document.querySelector('.chat-notify');
+const contactForm = document.getElementById('contactForm');
+const sections = document.querySelectorAll('section[id]');
+const navAnchors = document.querySelectorAll('.nav-links a');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  const spans = hamburger.querySelectorAll('span');
-  spans[0].style.transform = navLinks.classList.contains('open') ? 'rotate(45deg) translate(5px, 5px)' : '';
-  spans[1].style.opacity   = navLinks.classList.contains('open') ? '0' : '1';
-  spans[2].style.transform = navLinks.classList.contains('open') ? 'rotate(-45deg) translate(5px, -5px)' : '';
-});
+function openWhatsApp(message) {
+  const encoded = encodeURIComponent(message);
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`, '_blank', 'noopener');
+}
 
-// Close menu when a nav link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    hamburger.querySelectorAll('span').forEach(s => {
-      s.style.transform = '';
-      s.style.opacity = '1';
-    });
+window.addEventListener('scroll', () => {
+  if (navbar) {
+    navbar.classList.toggle('scrolled', window.scrollY > 24);
+  }
+
+  let current = '';
+  sections.forEach((section) => {
+    if (window.scrollY >= section.offsetTop - 140) {
+      current = section.id;
+    }
+  });
+
+  navAnchors.forEach((anchor) => {
+    anchor.style.color = anchor.getAttribute('href') === `#${current}` ? 'var(--white)' : '';
   });
 });
 
-/* ── Gallery Filter ───────────────────────────────────────── */
-const filterBtns  = document.querySelectorAll('.filter-btn');
-const galleryItems = document.querySelectorAll('.gallery-item');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    const spans = hamburger.querySelectorAll('span');
+    const isOpen = navLinks.classList.contains('open');
+    spans[0].style.transform = isOpen ? 'rotate(45deg) translate(5px, 5px)' : '';
+    spans[1].style.opacity = isOpen ? '0' : '1';
+    spans[2].style.transform = isOpen ? 'rotate(-45deg) translate(5px, -5px)' : '';
+  });
 
-filterBtns.forEach(btn => {
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.querySelectorAll('span').forEach((span) => {
+        span.style.transform = '';
+        span.style.opacity = '1';
+      });
+    });
+  });
+}
+
+filterBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
+    filterBtns.forEach((node) => node.classList.remove('active'));
     btn.classList.add('active');
 
     const filter = btn.dataset.filter;
-    galleryItems.forEach(item => {
-      if (filter === 'all' || item.dataset.category === filter) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
-      }
+    galleryItems.forEach((item) => {
+      item.classList.toggle('hidden', filter !== 'all' && item.dataset.category !== filter);
     });
   });
 });
 
-/* ── Gallery Lightbox ─────────────────────────────────────── */
-// Creates a simple lightbox when gallery items are clicked
 (function buildLightbox() {
+  if (!galleryItems.length) return;
+
   const overlay = document.createElement('div');
   overlay.id = 'lightbox';
   overlay.style.cssText = `
-    display:none; position:fixed; inset:0; z-index:9999;
-    background:rgba(0,0,0,0.95); align-items:center; justify-content:center;
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:2000;
+    align-items:center;
+    justify-content:center;
+    background:rgba(0,0,0,0.94);
     cursor:zoom-out;
+    padding:1rem;
   `;
-  const img = document.createElement('img');
-  img.style.cssText = `
-    max-width:90vw; max-height:90vh; border-radius:8px;
-    object-fit:contain; pointer-events:none;
+
+  const image = document.createElement('img');
+  image.style.cssText = `
+    max-width:92vw;
+    max-height:92vh;
+    object-fit:contain;
+    border-radius:18px;
   `;
-  overlay.appendChild(img);
+
+  overlay.appendChild(image);
   document.body.appendChild(overlay);
 
-  galleryItems.forEach(item => {
+  galleryItems.forEach((item) => {
     item.addEventListener('click', () => {
-      const src = item.querySelector('img').src;
-      img.src = src;
+      const source = item.querySelector('img');
+      if (!source) return;
+      image.src = source.src;
+      image.alt = source.alt;
       overlay.style.display = 'flex';
       document.body.style.overflow = 'hidden';
     });
@@ -83,106 +112,82 @@ filterBtns.forEach(btn => {
     document.body.style.overflow = '';
   });
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
       overlay.style.display = 'none';
       document.body.style.overflow = '';
     }
   });
 })();
 
-/* ── WhatsApp Chatbot ─────────────────────────────────────── */
-const chatTrigger = document.getElementById('chatTrigger');
-const chatBubble  = document.getElementById('chatBubble');
-const chatClose   = document.getElementById('chatClose');
-const chatNotify  = document.querySelector('.chat-notify');
-
-chatTrigger.addEventListener('click', () => {
-  chatBubble.classList.toggle('open');
-  if (chatNotify) chatNotify.style.display = 'none';
+document.querySelectorAll('[data-whatsapp-message]').forEach((button) => {
+  button.addEventListener('click', () => {
+    openWhatsApp(button.dataset.whatsappMessage);
+  });
 });
 
-chatClose.addEventListener('click', (e) => {
-  e.stopPropagation();
-  chatBubble.classList.remove('open');
-});
-
-// EDIT: Replace +2348000000000 with your actual WhatsApp number (no + or spaces)
-// Format: country code + number. Nigeria example: 2348012345678
-function openWhatsApp(message) {
-  const phone   = '2348000000000'; // EDIT: Replace with your WhatsApp number
-  const encoded = encodeURIComponent(message);
-  window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
+if (chatTrigger && chatBubble) {
+  chatTrigger.addEventListener('click', () => {
+    chatBubble.classList.toggle('open');
+    if (chatNotify) {
+      chatNotify.style.display = 'none';
+    }
+  });
 }
 
-/* ── Contact Form ─────────────────────────────────────────── */
-const contactForm = document.getElementById('contactForm');
+if (chatClose && chatBubble) {
+  chatClose.addEventListener('click', (event) => {
+    event.stopPropagation();
+    chatBubble.classList.remove('open');
+  });
+}
 
-contactForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+if (contactForm) {
+  contactForm.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-  // EDIT: For Netlify Forms, remove this entire JS handler and add
-  // netlify attribute to the <form> tag in index.html:
-  // <form name="contact" method="POST" data-netlify="true" id="contactForm">
-  // Also add inside form: <input type="hidden" name="form-name" value="contact" />
-  // Then DELETE this JS submit handler — Netlify handles it automatically.
+    const formData = new FormData(contactForm);
+    const name = formData.get('name')?.toString().trim() || '';
+    const phone = formData.get('phone')?.toString().trim() || '';
+    const email = formData.get('email')?.toString().trim() || '';
+    const service = formData.get('service')?.toString().trim() || '';
+    const message = formData.get('message')?.toString().trim() || '';
 
-  const btn  = contactForm.querySelector('.form-submit');
-  const name = document.getElementById('name').value;
+    const whatsappMessage = [
+      'Hello, I would like to book a session with Hood Studios Production.',
+      '',
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Email: ${email || 'Not provided'}`,
+      `Package/Session: ${service}`,
+      `Shoot details: ${message}`,
+    ].join('\n');
 
-  btn.innerHTML = '<span>Sending...</span>';
-  btn.style.opacity = '0.7';
+    openWhatsApp(whatsappMessage);
+  });
+}
 
-  setTimeout(() => {
-    btn.innerHTML = '<span>Message Sent! ✓</span>';
-    btn.style.background = '#1a7a3a';
-    contactForm.reset();
-    setTimeout(() => {
-      btn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
-      btn.style.background = '';
-      btn.style.opacity = '';
-    }, 4000);
-  }, 1200);
-});
-
-/* ── Scroll Reveal Animation ──────────────────────────────── */
-// Fade-in elements as they enter the viewport
 (function scrollReveal() {
   const targets = document.querySelectorAll(
-    '.service-card, .gallery-item, .price-card, .testimonial-card, .blog-card, .location-detail, .stat'
+    '.service-card, .gallery-item, .price-card, .policy-card, .testimonial-card, .location-detail'
   );
 
-  targets.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  if (!targets.length) return;
+
+  targets.forEach((target) => {
+    target.style.opacity = '0';
+    target.style.transform = 'translateY(20px)';
+    target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   });
 
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }, 80 * (Array.from(targets).indexOf(entry.target) % 4));
-        observer.unobserve(entry.target);
-      }
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.12 });
 
-  targets.forEach(el => observer.observe(el));
+  targets.forEach((target) => observer.observe(target));
 })();
-
-/* ── Active nav link on scroll ────────────────────────────── */
-const sections = document.querySelectorAll('section[id]');
-const navAnchors = document.querySelectorAll('.nav-links a');
-
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(sec => {
-    if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
-  });
-  navAnchors.forEach(a => {
-    a.style.color = a.getAttribute('href') === `#${current}` ? 'var(--white)' : '';
-  });
-});
