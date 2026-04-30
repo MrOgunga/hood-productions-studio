@@ -756,17 +756,99 @@ section {
   margin-top: 1rem;
 }
 
-.location-visual {
+.location-map-shell {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-map-intro {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.studio-map-frame {
+  position: relative;
   min-height: 480px;
   overflow: hidden;
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
 }
 
-.location-visual img {
+.studio-map-frame iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border: none;
+  display: block;
+}
+
+.studio-map-pins {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.studio-map-pin {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.1rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--off-white);
+  text-align: left;
+  transition: var(--transition);
+}
+
+.studio-map-pin:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+.studio-map-pin:last-child {
+  border-radius: 0 12px 12px 0;
+}
+
+.studio-map-pin:hover,
+.studio-map-pin.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #151515;
+}
+
+.mp-dot {
+  width: 8px;
+  height: 8px;
+  margin-bottom: 0.7rem;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: var(--transition);
+}
+
+.studio-map-pin:hover .mp-dot,
+.studio-map-pin.active .mp-dot {
+  background: #151515;
+}
+
+.mp-name {
+  margin-bottom: 0.2rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mp-coord {
+  font-size: 0.75rem;
+  color: var(--muted);
+  transition: var(--transition);
+}
+
+.studio-map-pin:hover .mp-coord,
+.studio-map-pin.active .mp-coord {
+  color: rgba(21, 21, 21, 0.7);
 }
 
 .contact {
@@ -1091,7 +1173,7 @@ section {
     grid-template-columns: 1fr;
   }
 
-  .location-visual {
+  .studio-map-frame {
     min-height: 380px;
   }
 }
@@ -1146,7 +1228,8 @@ section {
   .pricing-grid,
   .policy-grid,
   .testimonials-grid,
-  .form-row {
+  .form-row,
+  .studio-map-pins {
     grid-template-columns: 1fr;
   }
 
@@ -1160,5 +1243,10 @@ section {
 
   .hero-scroll {
     display: none;
+  }
+
+  .studio-map-pin:first-child,
+  .studio-map-pin:last-child {
+    border-radius: 12px;
   }
 }

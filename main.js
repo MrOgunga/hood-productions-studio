@@ -12,6 +12,8 @@ const chatNotify = document.querySelector('.chat-notify');
 const contactForm = document.getElementById('contactForm');
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a');
+const studioMap = document.getElementById('studioMap');
+const studioMapPins = document.querySelectorAll('.studio-map-pin');
 
 function openWhatsApp(message) {
   const encoded = encodeURIComponent(message);
@@ -65,6 +67,16 @@ filterBtns.forEach((btn) => {
     galleryItems.forEach((item) => {
       item.classList.toggle('hidden', filter !== 'all' && item.dataset.category !== filter);
     });
+  });
+});
+
+studioMapPins.forEach((pin) => {
+  pin.addEventListener('click', () => {
+    if (!studioMap) return;
+    studioMap.src = pin.dataset.mapTarget;
+    studioMapPins.forEach((node) => node.classList.remove('active'));
+    pin.classList.add('active');
+    studioMap.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 });
 
@@ -169,7 +181,7 @@ if (contactForm) {
 
 (function scrollReveal() {
   const targets = document.querySelectorAll(
-    '.service-card, .gallery-item, .price-card, .policy-card, .testimonial-card, .location-detail'
+    '.service-card, .gallery-item, .price-card, .policy-card, .testimonial-card, .location-detail, .studio-map-pin'
   );
 
   if (!targets.length) return;

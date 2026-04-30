@@ -349,8 +349,58 @@
             <i class="fas fa-directions"></i> Get Directions
           </a>
         </div>
-        <div class="location-visual">
-          <img src="assets/images/gallery-4.jpeg" alt="Hood Studios creative session" loading="lazy" />
+        <div class="location-map-shell">
+          <div class="location-map-intro">
+            <p>Use the map below to jump between the full studio address and the surrounding Sangotedo and Ajah area, just like the real estate demo style.</p>
+          </div>
+          <div class="studio-map-frame">
+            <iframe
+              id="studioMap"
+              src="https://maps.google.com/maps?q=No%201%20Maple%20Street%2C%20Happyland%20Estate%2C%20Sangotedo%2C%20Ajah%2C%20Lagos%20State%2C%20Nigeria&z=16&output=embed"
+              title="Hood Studios Production map"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="studio-map-pins">
+            <button
+              class="studio-map-pin active"
+              type="button"
+              data-map-target="https://maps.google.com/maps?q=No%201%20Maple%20Street%2C%20Happyland%20Estate%2C%20Sangotedo%2C%20Ajah%2C%20Lagos%20State%2C%20Nigeria&z=16&output=embed"
+            >
+              <span class="mp-dot"></span>
+              <span class="mp-name">Studio Address</span>
+              <span class="mp-coord">Maple Street, Happyland Estate</span>
+            </button>
+            <button
+              class="studio-map-pin"
+              type="button"
+              data-map-target="https://maps.google.com/maps?q=Happyland%20Estate%2C%20Sangotedo%2C%20Ajah%2C%20Lagos%20State%2C%20Nigeria&z=15&output=embed"
+            >
+              <span class="mp-dot"></span>
+              <span class="mp-name">Happyland Estate</span>
+              <span class="mp-coord">Sangotedo residential axis</span>
+            </button>
+            <button
+              class="studio-map-pin"
+              type="button"
+              data-map-target="https://maps.google.com/maps?q=Sangotedo%2C%20Ajah%2C%20Lagos%20State%2C%20Nigeria&z=14&output=embed"
+            >
+              <span class="mp-dot"></span>
+              <span class="mp-name">Sangotedo</span>
+              <span class="mp-coord">Fast-growing Lagos corridor</span>
+            </button>
+            <button
+              class="studio-map-pin"
+              type="button"
+              data-map-target="https://maps.google.com/maps?q=Ajah%2C%20Lagos%20State%2C%20Nigeria&z=13&output=embed"
+            >
+              <span class="mp-dot"></span>
+              <span class="mp-name">Ajah</span>
+              <span class="mp-coord">Wider studio area overview</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
